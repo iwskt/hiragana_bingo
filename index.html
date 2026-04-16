@@ -5,12 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hiragana Bingo</title>
 <style>
-body {font-family: Arial, sans-serif; background:#f9f9f9; text-align:center; padding:20px;}
-.board {display:grid; grid-template-columns:repeat(5,1fr); gap:8px; max-width:400px; margin:20px auto;}
-.cell {border:2px solid #ccc; aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer; position:relative;}
-.cell.marked::after {content:""; position:absolute; width:70%; height:70%; border:5px solid red; border-radius:50%;}
-button {margin:5px; padding:10px 16px; font-size:16px; cursor:pointer;}
-.free {background:#eee;}
+body {
+  font-family: Arial, sans-serif;
+  background:#f9f9f9;
+  text-align:center;
+  padding:10px;
+  margin:0;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.board {
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:6px;
+  width: 95vw;          /* ← 画面幅に合わせる */
+  max-width: 400px;
+  margin:15px auto;
+}
+
+.cell {
+  border:2px solid #ccc;
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: min(6vw, 26px);  /* ← ここが重要 */
+  cursor:pointer;
+  position:relative;
+}
+
+.cell.marked::after {
+  content:"";
+  position:absolute;
+  width:70%;
+  height:70%;
+  border:4px solid red;
+  border-radius:50%;
+}
+
+button {
+  margin:4px;
+  padding:10px 14px;
+  font-size:14px;
+  border-radius:20px;
+}
+
+.free {
+  background:#eee;
+}
 </style>
 </head>
 <body>
